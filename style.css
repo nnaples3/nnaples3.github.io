@@ -1,11 +1,75 @@
 html, body {
-  height: 100%;          /* Make them as tall as the viewport */
-  margin: 0;             /* Remove default margin */
-  padding: 0;            /* Remove default padding */
-  font-family: sans-serif; /* Optional: nicer font */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f8f8; /* Light background, change if you like */
+  color: #333;
 }
 
+/* Navbar styling */
+nav {
+  width: 100%;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  position: fixed; /* keeps it at top while scrolling */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00aaff; /* Highlight color on hover */
+}
+
+/* Main content wrapper */
+body > *:not(nav) {
+  min-height: 100vh;          /* Fill viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 2rem;    /* top padding to avoid navbar overlap */
+  box-sizing: border-box;
+}
+
+/* Page headings */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Images */
 .page-img {
-  max-width: 100%;
-  height: auto;      /* Keeps aspect ratio */
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  nav a {
+    margin: 0 1rem;
+  }
+
+  .page-img {
+    max-width: 95%;
+  }
 }
