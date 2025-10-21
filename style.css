@@ -1,0 +1,11 @@
+html, body {
+  height: 100%;          /* Make them as tall as the viewport */
+  margin: 0;             /* Remove default margin */
+  padding: 0;            /* Remove default padding */
+  font-family: sans-serif; /* Optional: nicer font */
+}
+
+.page-img {
+  max-width: 100%;
+  height: auto;      /* Keeps aspect ratio */
+}
