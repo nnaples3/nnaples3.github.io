@@ -36,26 +36,30 @@ nav a:hover {
   color: #00aaff;
 }
 
-/* Main content directly under nav */
-h1, .page-img {
-  margin-top: 120px; /* push content below fixed navbar */
-}
-
-/* Center page content vertically */
+/* Main content spacing */
 body > h1, body > .page-img {
   display: block;
   text-align: center;
+  margin-top: 100px; /* space for navbar */
 }
 
-/* Images */
+/* Images fill viewport but leave navbar space */
 .page-img {
-  max-width: 80%;
-  height: auto;
+  width: 100vw;
+  height: calc(100vh - 100px); /* full viewport minus navbar */
+  object-fit: contain;         /* scale to fit without cropping */
+  display: block;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
+/* Headings */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -66,6 +70,7 @@ body > h1, body > .page-img {
   }
 
   .page-img {
-    max-width: 95%;
+    width: 100vw;
+    height: calc(100vh - 80px);
   }
 }
