@@ -1,20 +1,24 @@
+/* Reset and fill viewport */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f8f8; /* Light background, change if you like */
+  background-color: #f8f8f8;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Navbar styling */
+/* Navbar */
 nav {
   width: 100%;
   background-color: #222;
   display: flex;
   justify-content: center;
   padding: 1rem 0;
-  position: fixed; /* keeps it at top while scrolling */
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -29,24 +33,17 @@ nav a {
 }
 
 nav a:hover {
-  color: #00aaff; /* Highlight color on hover */
+  color: #00aaff;
 }
 
-/* Main content wrapper */
-body > *:not(nav) {
-  min-height: 100vh;          /* Fill viewport height */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 2rem 2rem;    /* top padding to avoid navbar overlap */
-  box-sizing: border-box;
+/* Main content directly under nav */
+h1, .page-img {
+  margin-top: 120px; /* push content below fixed navbar */
 }
 
-/* Page headings */
-h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+/* Center page content vertically */
+body > h1, body > .page-img {
+  display: block;
   text-align: center;
 }
 
@@ -56,10 +53,9 @@ h1 {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  margin-bottom: 2rem;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
